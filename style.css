@@ -1,0 +1,383 @@
+/* Basic page setup */
+* {
+	box-sizing: border-box;
+}
+
+html {
+	scroll-behavior: smooth;
+}
+
+:root {
+	--color-primary: #6e1720; /* deep red */
+	--color-primary-2: #9e2b34; /* mid red */
+	--color-primary-3: #f3c6c6; /* light red/pink accent */
+	--color-cream: #f5f2eb;
+	--color-text: #2b1a1a;
+}
+
+body {
+	margin: 0;
+	font-family: Arial, Helvetica, sans-serif;
+	color: var(--color-text);
+	background:
+		radial-gradient(circle at top, rgba(255, 255, 255, 0.25), transparent 30%),
+		linear-gradient(180deg, var(--color-primary) 0%, var(--color-cream) 28%, var(--color-cream) 72%, var(--color-primary) 100%);
+}
+
+a {
+	color: inherit;
+	text-decoration: none;
+}
+
+img {
+	max-width: 100%;
+	display: block;
+}
+
+/* Shared layout wrapper */
+.container {
+	width: min(1100px, 92%);
+	margin: 0 auto;
+}
+
+/* Navigation */
+.topbar {
+	position: sticky;
+	top: 0;
+	z-index: 10;
+	background: rgba(110, 23, 32, 0.96);
+	border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.nav-bar {
+	min-height: 72px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 20px;
+}
+
+.logo {
+	font-size: 1.1rem;
+	font-weight: bold;
+	color: #f5f2eb;
+}
+
+.nav-links {
+	list-style: none;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	gap: 18px;
+	margin: 0;
+	padding: 0;
+}
+
+.nav-links a {
+	color: #f5f2eb;
+	font-size: 0.95rem;
+}
+
+.nav-links a:hover,
+.project-card a:hover,
+.contact-links a:hover {
+	text-decoration: underline;
+}
+
+/* Hero */
+.hero {
+	padding: 72px 0 56px;
+	background:
+		linear-gradient(rgba(70, 18, 20, 0.5), rgba(70, 18, 20, 0.7)),
+		radial-gradient(circle at 20% 20%, rgba(255, 150, 150, 0.36), transparent 28%),
+		radial-gradient(circle at 80% 30%, rgba(255, 200, 190, 0.26), transparent 24%),
+		linear-gradient(135deg, var(--color-primary), var(--color-primary-2) 55%, var(--color-primary));
+}
+
+.hero-content {
+	display: flex;
+	justify-content: center;
+}
+
+.profile-card {
+	width: min(680px, 100%);
+	text-align: center;
+	color: #f5f7fb;
+	padding: 56px 28px;
+	border-radius: 24px;
+	background: rgba(16, 24, 40, 0.32);
+	border: 1px solid rgba(255, 255, 255, 0.14);
+	box-shadow: 0 18px 50px rgba(0, 0, 0, 0.2);
+	backdrop-filter: blur(6px);
+}
+
+
+.profile-photo {
+	width: 128px;
+	height: 128px;
+	margin: 0 auto 20px;
+	border-radius: 50%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-size: 2rem;
+	font-weight: bold;
+	color: var(--color-primary);
+	background: linear-gradient(135deg, var(--color-cream), var(--color-primary-3));
+	border: 5px solid rgba(255, 255, 255, 0.35);
+}
+
+.eyebrow,
+.section-label {
+	margin: 0 0 10px;
+	text-transform: uppercase;
+	letter-spacing: 0.12em;
+	font-size: 0.8rem;
+	font-weight: bold;
+}
+
+.hero h1 {
+	margin: 0;
+	font-size: clamp(2.2rem, 5vw, 4rem);
+}
+
+.hero-text {
+	max-width: 56ch;
+	margin: 18px auto 0;
+	line-height: 1.7;
+	color: var(--color-cream);
+}
+
+/* Section styles */
+.section {
+	padding: 72px 0;
+}
+
+.section-light {
+	background: #f5f2eb;
+}
+
+.section-dark {
+	background: var(--color-primary);
+	color: #f5f7fb;
+}
+
+.section h2 {
+	margin: 0 0 18px;
+	font-size: clamp(1.7rem, 3vw, 2.3rem);
+}
+
+/* Improve subheadings (h3) used inside sections, e.g. the Skills subheads */
+.section h3 {
+    margin: 18px 0 8px;
+    font-size: 1.05rem;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    color: var(--color-primary);
+    position: relative;
+    line-height: 1.2;
+}
+
+.section h3::after {
+	content: "";
+	display: block;
+	width: 56px;
+	height: 6px;
+	border-radius: 6px;
+	background: rgba(158, 43, 52, 0.08);
+	margin-top: 10px;
+}
+
+.section-dark h3 {
+	color: #ffdfe0;
+}
+
+.section-dark h3::after {
+	background: rgba(245, 242, 235, 0.12);
+}
+
+.section p {
+	line-height: 1.7;
+}
+
+.section-label-light {
+	color: #ffdfe0;
+}
+
+/* About section layout */
+.section-split {
+	display: flex;
+	align-items: center;
+	gap: 36px;
+	flex-wrap: wrap;
+}
+
+.section-image {
+	flex: 1 1 320px;
+	min-height: 280px;
+	border-radius: 24px;
+	box-shadow: 0 16px 32px rgba(0, 0, 0, 0.12);
+}
+
+.about-image {
+	background:
+		linear-gradient(rgba(80, 18, 22, 0.06), rgba(80, 18, 22, 0.06)),
+		linear-gradient(135deg, var(--color-primary-3), #e79a9a 55%, #d86b6b);
+	position: relative;
+	overflow: hidden;
+}
+
+.about-image::after {
+	content: "";
+	position: absolute;
+	inset: 14% 18%;
+	border-radius: 20px;
+	background: linear-gradient(145deg, #6b1f22, #461214);
+	box-shadow: inset 0 0 0 10px rgba(255, 255, 255, 0.08);
+	transform: rotate(-8deg);
+}
+
+/* Skills */
+.skill-list {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 14px;
+	margin-top: 26px;
+}
+
+.skill-tag {
+	padding: 12px 18px;
+	border-radius: 999px;
+	background: rgba(245, 247, 251, 0.12);
+	border: 1px solid rgba(245, 247, 251, 0.18);
+}
+
+/* Projects */
+.project-list {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 22px;
+	margin-top: 28px;
+}
+
+.project-card {
+	flex: 1 1 260px;
+	padding: 24px;
+	border-radius: 20px;
+	background: #ffffff;
+	box-shadow: 0 14px 30px rgba(110, 23, 32, 0.06);
+	border: 1px solid rgba(158, 43, 52, 0.08);
+}
+
+.project-card h3 {
+	margin-top: 0;
+	margin-bottom: 12px;
+}
+
+.project-card a {
+	font-weight: bold;
+	color: var(--color-primary-2);
+}
+
+/* Contact */
+.contact-card {
+	text-align: center;
+}
+
+.contact-links {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	gap: 14px;
+	margin-top: 28px;
+}
+
+.contact-links a {
+	padding: 12px 18px;
+	border-radius: 999px;
+	background: #f5f2eb;
+	color: var(--color-primary);
+	font-weight: bold;
+}
+
+/* Small screens */
+@media (max-width: 700px) {
+	.nav-bar {
+		flex-direction: column;
+		padding: 14px 0;
+	}
+
+	.nav-links {
+		justify-content: center;
+		gap: 10px 14px;
+	}
+
+	.nav-links a {
+		font-size: 0.9rem;
+	}
+
+	.hero {
+		padding: 56px 0 40px;
+	}
+
+	.profile-card {
+		padding: 40px 20px;
+	}
+
+	.section {
+		padding: 56px 0;
+	}
+
+	.section-split {
+		gap: 24px;
+	}
+}
+
+@media (max-width: 480px) {
+	.hero {
+		padding: 42px 0 32px;
+	}
+
+	.profile-card {
+		padding: 28px 14px;
+		border-radius: 18px;
+	}
+
+	.section {
+		padding: 40px 0;
+	}
+
+	.section-split {
+		flex-direction: column;
+		align-items: stretch;
+	}
+
+	.section-image {
+		min-height: 220px;
+	}
+
+	.nav-links {
+		flex-direction: column;
+		align-items: center;
+		gap: 8px;
+	}
+
+	.skill-list,
+	.project-list,
+	.contact-links {
+		gap: 10px;
+		margin-top: 20px;
+	}
+
+	.skill-tag,
+	.contact-links a {
+		width: 100%;
+		text-align: center;
+		padding: 10px 14px;
+	}
+
+	.project-card {
+		flex-basis: 100%;
+		padding: 18px;
+	}
+}
