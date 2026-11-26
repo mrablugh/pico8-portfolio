@@ -133,15 +133,17 @@
       font-size: clamp(2.2rem, 5vw, 4rem);
     }
 
-    .hero h1 span {
-      color: var(--color-primary-3);
-    }
-
     .hero-text {
       max-width: 56ch;
       margin: 18px auto 0;
       color: var(--color-cream);
+      font-size: clamp(0.95rem, 2.3vw, 1.4rem);
       line-height: 1.7;
+    }
+
+    .hero-text span {
+      color: #d1d1d1;
+      font-style: italic;
     }
 
     .section {
@@ -279,11 +281,11 @@
 <body>
   <header class="hero">
     <div class="container">
-      <h1>Aaron <span>Jackson</span></h1>
+      <h1>Aaron Jackson's Games</h1>
       <p class="hero-text">
         Games I built in PICO-8 for GAME-401. Each one runs in the browser.<br>
         <br>
-        Controls: arrow keys to move, Z and X for the two buttons.
+        <span>Controls: arrow keys to move, Z and X for the two buttons.</span>
       </p>
     </div>
   </header>
